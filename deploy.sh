@@ -46,6 +46,22 @@ else
     echo "Remote origin already exists."
 fi
 
+# Fetch any remote changes to avoid conflicts
+echo "Fetching remote changes..."
+git fetch origin $BRANCH_MAIN
+if [ $? -ne 0 ]; then
+    echo "Error fetching remote changes."
+    exit 1
+fi
+
+# Merge remote changes into local branch
+echo "Merging remote changes into local branch..."
+git merge origin/$BRANCH_MAIN --allow-unrelated-histories
+if [ $? -ne 0 ]; then
+    echo "Error merging remote changes. Resolve conflicts manually."
+    exit 1
+fi
+
 # Push to the main branch
 echo "Pushing to main branch..."
 git branch -M $BRANCH_MAIN
