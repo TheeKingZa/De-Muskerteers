@@ -29,7 +29,7 @@ main {
     padding: 1rem;
     animation: bounceIn 10s ease-in-out;
     border-radius: 50px;
-    box-shadow: 0 0 20px 10px red;
+    box-shadow: 0 0 20px 10px;
 }
 
 .intro-content-list li:hover {
