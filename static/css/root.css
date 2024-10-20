@@ -1,3 +1,7 @@
+/* Fonts */
+/* Fruktur font */
+@import url('https://fonts.googleapis.com/css2?family=Fruktur:ital@0;1&family=Stalemate&display=swap');
+
 /* Reset Defaults */
 * {
     margin: 0;
@@ -15,120 +19,10 @@
 }
 
 body {
+    height: 100%;
     background-color: var(--main-clr);
 }
 
-/* Socials */
-
-/* Styling the button as a label for the checkbox */
-.toggle-btn {
-    top: 0;
-    background-image: url('../../imgs/socials/media_links.png'); /* Default image for the button (open) */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: fixed;
-    display: inline-block;
-    padding: 15px 15px;
-    margin: 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-image 2s ease; /* Smooth transition for background image change */
-}
-
-/* Change the button's background image when checkbox is checked */
-input[type="checkbox"]:checked + .toggle-btn {
-    background-image: url('../../imgs/socials/close_icon.png'); /* Image for close button */
-}
-
-/* Hide the checkbox */
-input[type="checkbox"] {
-    display: none;
-}
-
-/* Social links container */
-.social-links {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 10%;
-    opacity: 0; /* Initially hidden */
-    pointer-events: none;
-    transition: opacity 5s ease;
-}
-
-/* When checkbox is checked, show social links */
-input[type="checkbox"]:checked ~ .social-links {
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 2.25s ease;
-}
-
-/* Style for the social media icons */
-.socials {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    display: inline-block;
-    transform: translateX(-100%); /* Move off-screen initially */
-    opacity: 0; /* Hidden initially */
-    transition: transform 0.5s ease, opacity 5s ease; /* Smooth transition */
-}
-
-/* Animate each social icon with delay */
-input[type="checkbox"]:checked ~ .social-links a:nth-child(1) .socials {
-    transform: translateX(0);
-    opacity: 1;
-    transition-delay: 0.1s;
-}
-
-input[type="checkbox"]:checked ~ .social-links a:nth-child(2) .socials {
-    transform: translateX(0);
-    opacity: 1;
-    transition-delay: 0.2s;
-}
-
-input[type="checkbox"]:checked ~ .social-links a:nth-child(3) .socials {
-    transform: translateX(0);
-    opacity: 1;
-    transition-delay: 0.3s;
-}
-
-input[type="checkbox"]:checked ~ .social-links a:nth-child(4) .socials {
-    transform: translateX(0);
-    opacity: 1;
-    transition-delay: 0.4s;
-}
-
-input[type="checkbox"]:checked ~ .social-links a:nth-child(5) .socials {
-    transform: translateX(0);
-    opacity: 1;
-    transition-delay: 0.5s;
-}
-
-input[type="checkbox"]:checked ~ .social-links a:nth-child(6) .socials {
-    transform: translateX(0);
-    opacity: 1;
-    transition-delay: 0.6s;
-}
-
-/* Reverse the transition when unchecked */
-input[type="checkbox"]:not(:checked) ~ .social-links a .socials {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition-delay: 0s;
-}
-
-/* Logo */
-.logo-img {
-    width: 100%;
-    height: 150px;
-    background-image: url('../../imgs/photoshop/logo.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 
 /* Header */
 header {
@@ -144,6 +38,54 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+
+/* Navigation -END */
+nav {
+    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    margin-bottom: 2vh;
+}
+
+.nav-item-list {
+    /* sticky */
+    bottom: 0.2rem;
+    position: sticky;
+
+    font-family: 'Fruktur';
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    padding: 2px;
+    text-decoration: none;
+    color: var(--main-clr);
+}
+
+/* Small Screen nav */
+@media (width < 500px) {
+    .nav-item-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--color-bsc-w);
+    }
+}
+
+/* Large Screen nav */
+@media (width > 500px) {
+    .nav-item-list {
+        gap: 2rem;
+        background-color: var(--color-bsc-b);
+    }
 }
 
 /* Footer */

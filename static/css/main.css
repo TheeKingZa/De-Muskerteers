@@ -1,0 +1,99 @@
+main {
+    padding: 20px;
+}
+
+.intro-content {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-content-title {
+    text-align: center;
+}
+
+.intro-content-text {
+    padding: 20px;
+    text-align: center;
+    animation: fadeInUp 10s ease-in-out;
+}
+
+.intro-content-list ul {
+    list-style: none;
+    padding: 5px;
+    border-bottom: 3px solid var(--color-bsc-b);
+    text-align: center;
+    gap: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    animation: bounceIn 10s ease-in-out;
+    border-radius: 50px;
+    box-shadow: 0 0 20px 10px red;
+}
+
+.intro-content-list li:hover {
+    border-bottom: 3px solid var(--color-bsc-b);
+    color: var(--color-bsc-w);
+    background-color: var(--color-bsc-b);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+    from {
+        opacity: 0;
+        border: 3px solid var(--color-bsc-b);
+        box-shadow: 0 0 10px var(--color-bsc-b);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
