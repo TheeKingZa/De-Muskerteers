@@ -60,6 +60,8 @@ nav {
     width: 100%;
     display: flex;
     justify-content: center;
+    background-color: var(--color-bsc-b);
+
 }
 
 nav a {
@@ -76,7 +78,7 @@ nav a {
         justify-content: center;
         align-items: center;
 
-        background-color: var(--color-bsc-w);
+        
     }
 }
 
@@ -84,8 +86,9 @@ nav a {
 @media (width > 500px) {
     .nav-item-list {
         gap: 2rem;
-        background-color: var(--color-bsc-b);
-    }
+            animation: fadeInUp 1s ease-in-out;
+
+        }
 }
 
 /* Footer */
